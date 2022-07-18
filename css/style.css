@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+header {
+    padding: 30px 70px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+
+
+}
+
+header a {
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: moveLeft 1s linear;
+
+}
+
+header i {
+    cursor: pointer;
+    animation: moveRight 1s linear;
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    overflow: hidden;
+}
+
+header ul {
+    display: none;
+
+}
+
+header.toogle ul {
+    display: flex;
+    animation: moveRight2 .5s linear ;
+}
+
+header ul li {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+header ul li a {
+    padding: 20px;
+}
+
+.all {
+    width: 80%;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 200px);
+    position: relative;
+}
+
+.img {
+
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+    border-right: 10px solid white;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.img .full {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    animation: img .5s linear;
+}
+
+.hover {
+    transition: .5s linear;
+}
+
+.hover:hover {
+    transform: scale(1.2);
+}
+.img:nth-of-type(1) img{
+    animation: moveLeft .5s linear;
+}
+.img:nth-of-type(3) img{
+    animation: moveLeft 1s linear;
+}
+.img:nth-of-type(2) img{
+    animation: moveRight 2s linear;
+}
+.img:nth-of-type(4) img{
+    animation: moveRight 1.5s linear;
+}
+@keyframes img {
+    0% {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    100% {
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+}
+
+@keyframes moveLeft {
+
+
+    0% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes moveRight {
+
+
+    0% {
+        transform: translateX(300%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes moveRight2 {
+
+
+    0% {
+        position: absolute;
+        right: 0;
+        transform: translateX(300%);
+        top: 0;
+        transform: translateX(300%);
+    }
+
+    100% {
+        display: flex;
+        transform: translateX(0%);
+    }
+}
